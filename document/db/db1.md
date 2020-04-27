@@ -23,27 +23,61 @@
 
 <br>
 
-## ER 다이어그램
+## SQL
 
-![image](https://user-images.githubusercontent.com/43431081/80365963-6607aa00-88c3-11ea-92fb-300c1b92eae4.png)
+* **Create**
+
+  ```sql
+  create table measurement_data (
+    id serial primary key,
+    pvVoltage integer,
+    pvElectricCurrent integer,
+    pvOutput integer,
+    outputVoltage integer,
+    outputElectricCurrent integer,
+    currentOutput integer,
+    powerFactor double precision,
+    frequency double precision,
+    cumulativePowerGeneration integer,
+    breakdown integer
+  );
+  ```
 
 <br>
 
-## SQL
+* **Insert**
 
-```sql
-create table measurement_data (
-  id serial primary key,
-  pvVoltage integer,
-  pvEletricCurrent integer,
-  pvOutput integer,
-  outputVoltage integer,
-  outputEletricCurrent integer,
-  currentOutput integer,
-  powerFactor double precision,
-  frequency double precision,
-  cumulativePowerGeneration integer,
-  breakdown integer
-);
-```
+  ```sql
+  insert into measurement_data
+  ( pvVoltage,
+    pvElectricCurrent,
+    pvOutput,
+    outputVoltage,
+    outputElectricCurrent,
+    currentOutput,
+    powerFactor, 
+    frequency,
+    cumulativePowerGeneration,
+    breakdown)
+    values
+    (#{pvVoltage},
+    #{pvElectricCurrent},
+    #{pvOutput},
+    #{outputVoltage},
+    #{outputElectricCurrent},
+    #{currentOutput},
+    #{powerFactor}, 
+    #{frequency},
+    #{cumulativePowerGeneration},
+    #{breakdown})
+  ```
 
+<br>
+
+* **select**
+
+  ```sql
+  select * from measurement_data
+  ```
+
+  
