@@ -21,7 +21,20 @@
 <br>
 
 * **POST /data**
-    | 데이터 이름               | 데이터 타입 |
+    
+  * body
+      
+    ```json
+    {
+      "pvVoltage": 123,
+      "pvElectricCurrent": 123,
+      ...
+    }
+    ```
+    
+    
+  
+  | 데이터 이름               | 데이터 타입 |
   | ------------------------- | ----------- |
   | pvVoltage                 | integer     |
   | pvElectricCurrent         | integer     |

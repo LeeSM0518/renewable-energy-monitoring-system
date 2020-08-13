@@ -8,6 +8,8 @@ import service.DataService;
 
 import java.util.List;
 
+// 192.168.0.10:8080/data
+
 @RestController
 @RequestMapping("/data")
 public class DataController {
