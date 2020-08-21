@@ -1,9 +1,9 @@
 ### GET
-GET http://localhost:8888/data
+GET http://localhost:8080/data
 Accept: application/json
 
 ### POST
-POST http://localhost:8888/data
+POST http://localhost:8080/data
 Content-Type: application/json
 
 {
@@ -21,8 +21,8 @@ Content-Type: application/json
 
 ### DELETE
 
-DELETE http://localhost:8888/all
+DELETE http://localhost:8080/all
 
 ### GET
-GET http://192.168.43.136:8888/data
+GET http://192.168.43.136:8080/data
 Accept: application/json

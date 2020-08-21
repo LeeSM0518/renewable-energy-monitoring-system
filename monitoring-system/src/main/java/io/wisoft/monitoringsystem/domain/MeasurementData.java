@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 @Entity
 @Getter @Setter
@@ -37,5 +38,7 @@ public class MeasurementData {
   private int cumulativePowerGeneration;
   @Column
   private int breakdown;
+  @Column
+  private Timestamp createDate;
 
 }

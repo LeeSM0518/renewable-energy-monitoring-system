@@ -5,6 +5,7 @@ import io.wisoft.monitoringsystem.domain.MeasurementData;
 import io.wisoft.monitoringsystem.service.MeasurementDataService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;

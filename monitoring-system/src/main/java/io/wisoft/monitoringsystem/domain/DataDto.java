@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 
 
 @Data
@@ -35,5 +36,6 @@ public class DataDto {
   private int cumulativePowerGeneration;
   @Range(min = 1, message = "breakdown is null")
   private int breakdown;
+  private Timestamp createDate;
 
 }
