@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MeasurementDataRepository extends JpaRepository<MeasurementData, Long> {
 
+  MeasurementData findFirstByOrderByCreateDateDesc();
+
 }

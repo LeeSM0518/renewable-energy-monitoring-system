@@ -12,12 +12,13 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MeasurementDataController {
 
   private final MeasurementDataService measurementDataService;
 
   @GetMapping("/data")
-  public List<MeasurementData> getAll() {
+  public MeasurementData get() {
     return measurementDataService.getAll();
   }
 

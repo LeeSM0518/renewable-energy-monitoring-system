@@ -24,9 +24,9 @@ export default {
             load: function() {
               // set up the updating of the chart each second
               var series = this.series[0];
-              createData = setInterval(function() {
+              createData = setInterval(async function() {
                 var x = new Date().getTime(), // current time
-                  y = createRandomY();
+                  y = await createRandomY();
                 series.addPoint([x, y], true, true);
               }, 1000);
             },

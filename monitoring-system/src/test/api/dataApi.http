@@ -1,9 +1,9 @@
 ### GET
-GET http://localhost:8080/data
+GET http://localhost:8087/data
 Accept: application/json
 
 ### POST
-POST http://localhost:8080/data
+POST http://localhost:8087/data
 Content-Type: application/json
 
 {

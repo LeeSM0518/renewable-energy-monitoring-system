@@ -35,6 +35,7 @@
 
 <script>
 import DataChart from './charts/DataChart.vue';
+import { getData } from '@/api/data.js';
 
 export default {
   name: 'Home',
@@ -49,8 +50,9 @@ export default {
           title: 'PV 전압',
           xText: 'Time',
           yText: 'Voltage(V)',
-          method: () => {
-            return 493 + Math.random() * 7;
+          method: async () => {
+            var { data } = await getData();
+            return data.pvVoltage;
           },
         },
         {
@@ -58,8 +60,9 @@ export default {
           title: 'PV 전류',
           xText: 'Time',
           yText: 'Current(A, rms)',
-          method: () => {
-            return 23 + Math.random() * 2;
+          method: async () => {
+            var { data } = await getData();
+            return data.pvElectricCurrent;
           },
         },
         {
@@ -67,8 +70,9 @@ export default {
           title: 'PV 출력',
           xText: 'Time',
           yText: 'Watt(W)',
-          method: () => {
-            return (493 + Math.random() * 7) * (23 + Math.random() * 2);
+          method: async () => {
+            var { data } = await getData();
+            return data.pvOutput;
           },
         },
         {
@@ -76,8 +80,9 @@ export default {
           title: '출력 전압',
           xText: 'Time',
           yText: 'Voltage(V, rms)',
-          method: () => {
-            return 380;
+          method: async () => {
+            var { data } = await getData();
+            return data.outputVoltage;
           },
         },
         {
@@ -85,8 +90,9 @@ export default {
           title: '출력 전류',
           xText: 'Time',
           yText: 'Current(A, rms)',
-          method: () => {
-            return 70 + Math.random() * 5.0;
+          method: async () => {
+            var { data } = await getData();
+            return data.outputElectricCurrent;
           },
         },
         {
@@ -94,8 +100,9 @@ export default {
           title: '현재 출력',
           xText: 'Time',
           yText: 'Watt(W, rms)',
-          method: () => {
-            return 380 * (70 + Math.random() * 5.0);
+          method: async () => {
+            var { data } = await getData();
+            return data.currentOutput;
           },
         },
         {
@@ -103,8 +110,9 @@ export default {
           title: '역률',
           xText: 'Time',
           yText: 'Percent(%)',
-          method: () => {
-            return 99.9;
+          method: async () => {
+            var { data } = await getData();
+            return data.powerFactor;
           },
         },
         {
@@ -112,14 +120,24 @@ export default {
           title: '주파수',
           xText: 'Time',
           yText: 'Hertz(Hz)',
-          method: () => {
-            return 60;
+          method: async () => {
+            var { data } = await getData();
+            return data.frequency;
           },
         },
       ],
     };
   },
+
+  methods: {
+    async get() {
+      const { data } = await getData();
+      return data;
+    },
+  },
+
   created: function() {
+    console.log(this.get().id);
     for (var i = 0; i < this.charts.length; i++) {
       this.charts[i]['link'] = '/live#' + this.charts[i].id;
     }
