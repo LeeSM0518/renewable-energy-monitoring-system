@@ -15,15 +15,9 @@
           </v-list-item>
 
           <v-card-actions>
+            <v-btn color="primary" class="white--text" @click="run">On</v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="blue-grey darken-4" class="white--text" @click="run"
-              >Run</v-btn
-            >
-            <v-spacer></v-spacer>
-            <v-btn color="blue-grey darken-4" class="white--text" @click="stop"
-              >Stop</v-btn
-            >
-            <v-spacer></v-spacer>
+            <v-btn color="grey" class="white--text" @click="stop">Off</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
